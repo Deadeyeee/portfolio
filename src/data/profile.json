@@ -59,7 +59,7 @@
       "description": "A secure internal communication system with live chat and automated chatbot workflows.",
       "tech": [".NET Core", "C#", "SignalR", "SQL Server"],
       "image": "/placeholder.svg",
-      "link": "https://sirius.ardata.tech/#home"
+      "link": "/"
     },
     {
       "name": "Let's Cook Website",
@@ -80,7 +80,7 @@
       "description": "A Landing Page for Sirius DePIN Stack Website.",
       "tech": ["Next.js", "TailwindCSS", "Node.js"],
       "image": "/images/sirius.jpg",
-      "link": "https://example.com/real-time-messaging"
+      "link": "https://sirius.ardata.tech/#home"
     },
     {
       "name": "AR Data Website",

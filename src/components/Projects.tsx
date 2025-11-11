@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Code2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface Project {
   name: string;
@@ -33,9 +34,26 @@ export const Projects = ({ projects }: ProjectsProps) => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">Featured Projects</h2>
-          <p className="text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
             Recent work showcasing technical expertise and problem-solving
           </p>
+
+          <div className="flex justify-center mb-12">
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full"
+            >
+              <a
+                href="https://coterie-labs.gitbook.io/coterie-labs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View the complete team project portfolio"
+              >
+                View Full Team Portfolio
+              </a>
+            </Button>
+          </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
