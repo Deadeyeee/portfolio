@@ -1,0 +1,81 @@
+{
+  "name": "Jhimwel Prago",
+  "title": "Full Stack Developer (.NET • React • Web3)",
+  "location": "Valenzuela City, Philippines",
+  "email": "Jhimwel.Prago@gmail.com",
+  "phone": "09292337731",
+  "socials": {
+    "linkedin": "https://linkedin.com/in/jhimwelpragojuan"
+  },
+  "summary": "Results-oriented Full Stack Developer experienced in building scalable enterprise applications using ASP.NET, React, Node.js, and Web3. Strong ability to translate complex requirements into clean, maintainable solutions.",
+  "skills": [
+    "ASP.NET (MVC/MVVM)",
+    "C#",
+    "React.js",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "SQL Server",
+    "TailwindCSS",
+    "TypeScript",
+    "Solana Web3 Integration"
+  ],
+  "experience": [
+    {
+      "role": ".NET Developer",
+      "company": "Offshore Business Processing",
+      "date": "March 2024 - Present",
+      "details": [
+        "Built and maintained real-time enterprise web platforms.",
+        "Implemented security improvements such as reCAPTCHA and spam filtering.",
+        "Handled production deployments using IIS and Plesk."
+      ]
+    },
+    {
+      "role": "Programmer I",
+      "company": "Systems and Software Consulting Group Inc.",
+      "date": "Jan 2024 - Feb 2025",
+      "details": [
+        "Developed change requests and fixed client issues.",
+        "Used ASP.NET, SQL Server, Bootstrap, Kendo UI, and Crystal Reports.",
+        "Worked within MVC, MVVM, and 3-tier architectures."
+      ]
+    },
+    {
+      "role": "Freelance Full Stack Developer (Web2 & Web3)",
+      "date": "Dec 2023 - Present",
+      "details": [
+        "Built responsive websites using React and Tailwind.",
+        "Developed Express.js APIs with JWT authentication.",
+        "Integrated Solana wallet interactions into React applications."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Real-Time Messaging Platform",
+      "description": "A secure internal communication system with live chat and automated chatbot workflows.",
+      "tech": ["ASP.NET", "C#", "SignalR", "SQL Server"]
+    },
+    {
+      "name": "Solana dApp Interface",
+      "description": "Front-end wallet connection and smart contract UI for Solana blockchain interactions.",
+      "tech": ["React", "Solana Web3.js", "Phantom Wallet"]
+    },
+    {
+      "name": "Client Landing Page Builder",
+      "description": "Custom landing page templates supporting dynamic content updates and form submissions.",
+      "tech": ["Next.js", "TailwindCSS", "Node.js"]
+    }
+  ],
+  "education": {
+    "degree": "Bachelor of Science in Information Technology",
+    "school": "University of the East",
+    "date": "2019 - 2023",
+    "honors": "Cum Laude"
+  },
+  "awards": [
+    "Employee of the Month (April 2024)",
+    "Nominee of the Month (March 2024)"
+  ]
+}
