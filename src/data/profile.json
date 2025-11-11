@@ -86,14 +86,14 @@
       "name": "AR Data Website",
       "description": "A Landing Page for AR Data.",
       "tech": ["Next.js", "TailwindCSS", "Node.js"],
-      "image": "/images/ardata.jpg",
+      "image": "/images/ARData.jpg",
       "link": "https://www.ardata.tech/"
     },
     {
       "name": "Payroll System",
       "description": "A payroll system for managing employee salaries and deductions.",
       "tech": ["Next.js", "TailwindCSS", "Node.js", "Express.js", "MySQL"],
-      "image": "/images/payrollsystem.jpg",
+      "image": "/images/payrollSystem.jpg",
       "link": "https://coterie-labs.gitbook.io/coterie-labs/overview/our-portfolio/website-design-and-development/payroll-system"
     }
   ],
