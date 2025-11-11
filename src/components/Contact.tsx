@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";

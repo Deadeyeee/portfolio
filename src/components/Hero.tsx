@@ -1,6 +1,10 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Mail, MapPin, Linkedin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HeroBackground } from "@/components/HeroBackground";
+import Image from "next/image";
 
 interface ProfileData {
   name: string;
@@ -20,25 +24,8 @@ interface HeroProps {
 
 export const Hero = ({ profile }: HeroProps) => {
   return (
-    <section className="relative min-h-screen flex items-center px-4 pt-16 overflow-hidden">
-      {/* Flow Field Background */}
-      <div className="absolute inset-0 opacity-30 dark:opacity-20">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" className="text-primary" stopColor="currentColor" stopOpacity="0.2" />
-              <stop offset="100%" className="text-accent" stopColor="currentColor" stopOpacity="0.1" />
-            </linearGradient>
-          </defs>
-          {/* Flowing curved lines */}
-          <path d="M0,100 Q250,50 500,100 T1000,100" stroke="url(#flow-gradient)" strokeWidth="2" fill="none" className="animate-pulse" />
-          <path d="M0,200 Q300,150 600,200 T1200,200" stroke="url(#flow-gradient)" strokeWidth="1.5" fill="none" style={{ animationDelay: '0.5s' }} className="animate-pulse" />
-          <path d="M0,300 Q200,250 400,300 T800,300" stroke="url(#flow-gradient)" strokeWidth="2.5" fill="none" style={{ animationDelay: '1s' }} className="animate-pulse" />
-          <path d="M0,400 Q350,350 700,400 T1400,400" stroke="url(#flow-gradient)" strokeWidth="1" fill="none" style={{ animationDelay: '1.5s' }} className="animate-pulse" />
-          <path d="M0,500 Q150,450 300,500 T600,500" stroke="url(#flow-gradient)" strokeWidth="2" fill="none" style={{ animationDelay: '2s' }} className="animate-pulse" />
-        </svg>
-      </div>
-
+    <section className="relative min-h-screen flex items-center px-4 overflow-hidden">
+      <HeroBackground />
       <div className="max-w-7xl w-full mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left: Content */}
         <motion.div
@@ -86,13 +73,27 @@ export const Hero = ({ profile }: HeroProps) => {
             <Button size="lg" asChild className="rounded-full">
               <a href={`mailto:${profile.email}`}>Get In Touch</a>
             </Button>
-            <Button size="lg" variant="outline" asChild className="rounded-full">
-              <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer">
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="rounded-full"
+            >
+              <a
+                href={profile.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin size={18} className="mr-2" />
                 LinkedIn
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild className="rounded-full">
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="rounded-full"
+            >
               <a href="/resume">View Resume</a>
             </Button>
           </div>
@@ -103,12 +104,18 @@ export const Hero = ({ profile }: HeroProps) => {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center justify-center"
+          className="flex items-center justify-end"
         >
-          <div className="relative w-full max-w-md aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur-sm border border-border flex items-center justify-center">
-            <p className="text-muted-foreground text-center px-8">
-              Your profile image will appear here
-            </p>
+          <div className="relative w-full max-w-md aspect-square overflow-hidden rounded-2xl">
+            <Image
+              src="/images/profilePicture.png"
+              alt={`${profile.name} portrait`}
+              fill
+              priority
+              quality={100}
+              sizes="(min-width: 1024px) 24rem, (min-width: 768px) 40vw, 70vw"
+              className="-scale-x-100"
+            />
           </div>
         </motion.div>
       </div>
