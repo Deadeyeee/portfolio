@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
+import { useTheme } from "next-themes";
 
 const LINE_COUNT = 6;
 const POINTS_PER_LINE = 80;
@@ -9,6 +10,11 @@ const POINTS_PER_LINE = 80;
 export const HeroBackground = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const animationRef = useRef<number>();
+  const { resolvedTheme } = useTheme();
+  const isDarkMode = resolvedTheme === "dark";
+
+  const lineColor = useMemo(() => (isDarkMode ? 0xffffff : 0x0a0a0a), [isDarkMode]);
+  const lineOpacity = useMemo(() => (isDarkMode ? 0.35 : 0.65), [isDarkMode]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -41,9 +47,9 @@ export const HeroBackground = () => {
         geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
         const material = new THREE.LineBasicMaterial({
-          color: 0x0a0a0a,
+          color: lineColor,
           transparent: true,
-          opacity: 0.65 - i * 0.08,
+          opacity: lineOpacity - i * 0.08,
         });
 
         const line = new THREE.Line(geometry, material);
@@ -133,7 +139,7 @@ export const HeroBackground = () => {
       renderer.forceContextLoss?.();
       container.removeChild(renderer.domElement);
     };
-  }, []);
+  }, [lineColor, lineOpacity, isDarkMode]);
 
   return <div ref={containerRef} className="absolute inset-0 pointer-events-none" aria-hidden="true" />;
 };
