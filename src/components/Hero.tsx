@@ -24,97 +24,77 @@ interface HeroProps {
 
 export const Hero = ({ profile }: HeroProps) => {
   return (
-    <section className="relative min-h-screen flex items-center px-4 overflow-hidden">
+    <section className="relative overflow-hidden">
       <HeroBackground />
-      <div className="max-w-7xl w-full mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-12 px-4 py-24 sm:px-6 lg:flex-row lg:items-center lg:gap-16 lg:py-32">
         {/* Left: Content */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-left"
+          className="flex w-full flex-col gap-8 text-left lg:w-1/2"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4">
-            {profile.name}
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-            {profile.title}
-          </p>
-          <p className="text-lg text-text-secondary mb-8 leading-relaxed">
-            {profile.summary}
-          </p>
+          <div className="space-y-4">
+            <h1 className="text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">
+              {profile.name}
+            </h1>
+            <p className="text-lg text-muted-foreground sm:text-xl">{profile.title}</p>
+            <p className="text-base leading-relaxed text-text-secondary sm:text-lg">{profile.summary}</p>
+          </div>
 
-          <div className="flex flex-col gap-3 mb-8">
-            <motion.div
-              whileHover={{ x: 5 }}
-              className="flex items-center gap-2 text-muted-foreground"
-            >
+          <div className="flex flex-col gap-4 text-sm text-muted-foreground sm:text-base">
+            <motion.div whileHover={{ x: 5 }} className="flex flex-wrap items-center gap-2">
               <MapPin size={18} />
               <span>{profile.location}</span>
             </motion.div>
             <motion.a
               href={`mailto:${profile.email}`}
               whileHover={{ x: 5 }}
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex flex-wrap items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={18} />
               <span>{profile.email}</span>
             </motion.a>
-            <motion.div
-              whileHover={{ x: 5 }}
-              className="flex items-center gap-2 text-muted-foreground"
-            >
+            <motion.div whileHover={{ x: 5 }} className="flex flex-wrap items-center gap-2">
               <Phone size={18} />
               <span>{profile.phone}</span>
             </motion.div>
           </div>
 
-          <div className="flex flex-wrap gap-4">
-            <Button size="lg" asChild className="rounded-full">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+            <Button size="lg" asChild className="rounded-full w-full sm:w-auto">
               <a href={`mailto:${profile.email}`}>Get In Touch</a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="rounded-full"
-            >
-              <a
-                href={profile.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            <Button size="lg" variant="outline" asChild className="rounded-full w-full sm:w-auto">
+              <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer">
                 <Linkedin size={18} className="mr-2" />
                 LinkedIn
               </a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="rounded-full"
-            >
+            <Button size="lg" variant="outline" asChild className="rounded-full w-full sm:w-auto">
               <a href="/resume">View Resume</a>
             </Button>
           </div>
         </motion.div>
 
-        {/* Right: Image Placeholder */}
+        {/* Right: Image */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center justify-end"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex w-full items-center justify-center lg:w-1/2"
         >
-          <div className="relative w-full max-w-md aspect-square overflow-hidden rounded-2xl">
+          <div className="relative aspect-square w-full max-w-xs overflow-hidden rounded-2xl border border-border bg-background/60 shadow-lg sm:max-w-sm md:max-w-md">
             <Image
               src="/images/profilePicture.png"
               alt={`${profile.name} portrait`}
               fill
               priority
               quality={100}
-              sizes="(min-width: 1024px) 24rem, (min-width: 768px) 40vw, 70vw"
-              className="-scale-x-100"
+              sizes="(min-width: 1024px) 28rem, (min-width: 768px) 22rem, 18rem"
+              className="-scale-x-100 object-cover"
             />
           </div>
         </motion.div>
