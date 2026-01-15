@@ -19,13 +19,14 @@
     "SQL Server",
     "TailwindCSS",
     "TypeScript",
-    "Solana Web3 Integration"
+    "Solana Web3 Integration",
+    "Cursor"
   ],
   "experience": [
     {
       "role": ".NET Developer",
       "company": "Offshore Business Processing",
-      "date": "March 2024 - Present",
+      "date": "March 2025 - Present",
       "details": [
         "Built and maintained real-time enterprise web platforms.",
         "Implemented security improvements such as reCAPTCHA and spam filtering.",

@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import { ExperienceBackground } from "./ExperienceBackground";
 
 interface ExperienceItem {
   role: string;
@@ -44,8 +45,9 @@ export const Experience = ({ experience }: ExperienceProps) => {
   }, [api]);
 
   return (
-    <section className="py-24 px-4 bg-surface">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-24 px-4 bg-surface relative overflow-hidden">
+      <ExperienceBackground />
+      <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +61,7 @@ export const Experience = ({ experience }: ExperienceProps) => {
 
           <Carousel
             className="relative"
-            opts={{ loop: true, align: "start" }}
+            opts={{ loop: false, align: "start" }}
             setApi={setApi}
             onMouseEnter={() => {
               isHovered.current = true;
