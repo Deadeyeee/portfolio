@@ -80,6 +80,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTXKMTXETV"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-BTXKMTXETV');
+      </script>
       <body className={`${inter.className} bg-background text-foreground antialiased`}>
         <AppProviders>
           <Navigation />
